@@ -1,2 +1,2 @@
-Movie_Project \n
+Movie_Project "\n"
 with React, TypeScripts
