@@ -73,12 +73,16 @@ function App(): JSX.Element {
       <div className="title">
         <h1>Movies by latest</h1>
         <hr></hr>
-        {Movies.map((movie) => (
-          <img src={`${ImageURL}w1280${movie.backdrop_path}`}></img>
-        ))}
       </div>
-      
-      
+      <div className="contents">
+        {Movies.map((movie) => (
+          <Contents 
+          poster={`${ImageURL}w500${movie.poster_path}`}
+          id={movie.id}
+          ></Contents>
+        ))}
+        </div>
+        
     </div>
   );
 }
