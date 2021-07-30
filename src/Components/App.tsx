@@ -79,6 +79,7 @@ function App(): JSX.Element {
           <Contents 
           poster={`${ImageURL}w500${movie.poster_path}`}
           id={movie.id}
+          key={movie.id}
           ></Contents>
         ))}
         </div>
