@@ -1,0 +1,16 @@
+.MainPage{
+  width: auto;
+  height: auto;
+}
+.title{
+  width: 100%;
+  text-align: center;
+
+}
+.contents{
+  width: 100%;
+  position:absolute;
+}
+.MainMovie{
+  width: 100%;
+}
