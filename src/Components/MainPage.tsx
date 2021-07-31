@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
-import {ApiKey, ApiURL, ImageURL} from './Components/Config';
-import MainImage from './Components/MainImage';
+import './MainPage.css';
+import {ApiKey, ApiURL, ImageURL} from './Config';
+import MainImage from './MainImage';
 import axios from 'axios';
-import Contents from "./Components/Contents";
+import Contents from "./Contents";
 
 interface Movie{
   adult: false
@@ -22,25 +22,36 @@ interface Movie{
   vote_count: number;
 }
 //function App(props : Movie): JSX.Element 
-function App(): JSX.Element {
+function MainPage(): JSX.Element {
   const [Movies, setMovies] = useState<Movie[]>([]);
   const [MainMovie, setMainMovie] = useState<Movie>();
+  const [current, setcurrent] = useState<number>(0);
+  let endpoint = `${ApiURL}movie/popular?api_key=${ApiKey}&language=ko-Korean&page=1`;
 
-  async function getData(){ 
+  async function getData(endpoint:string){ 
     try {
     //응답 성공
-    const endpoint = `${ApiURL}movie/popular?api_key=${ApiKey}&language=ko-Korean&page=1`;
     axios.get(endpoint)
     .then(response => {
     setMovies(response.data.results);
     setMainMovie(response.data.results[0]);
+    setcurrent(response.data.page);
     }) 
     } catch (error) {
       //응답 실패
       console.error(error);
     }
   }
-
+  function LoadingNext() {
+    endpoint = `${ApiURL}movie/popular?api_key=${ApiKey}&language=ko-Korean&page=${current + 1}`;
+    getData(endpoint);
+    console.log(`now page = ${current+1}`);
+  }
+  function LoadingPrev() {
+    endpoint = `${ApiURL}movie/popular?api_key=${ApiKey}&language=ko-Korean&page=${current - 1}`;
+    getData(endpoint);
+    console.log(`now page = ${current-1}`);
+  }
   useEffect(() => {
     // const endpoint = `${ApiURL}movie/popular?api_key=${ApiKey}&language=en-US&page=1`;
     // fetch(endpoint)
@@ -55,10 +66,10 @@ function App(): JSX.Element {
     //   setMainMovie(response.data.results[0]);
     //   console.log(response.data.results);
     // })
-    getData();
+    getData(endpoint);
   }, [])
-  console.log(Movies);
-  console.log(MainMovie);
+  //console.log(Movies);
+  //console.log(MainMovie);
   return (
     <div className="MainPage">
 
@@ -82,10 +93,16 @@ function App(): JSX.Element {
           key={movie.id}
           ></Contents>
         ))}
-        </div>
-        
+      </div>
+      <div className="control">
+            <button onClick={LoadingPrev}>previous</button>
+            <div className="page">
+              {current}
+            </div>
+            <button onClick={LoadingNext}>next</button>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default MainPage;

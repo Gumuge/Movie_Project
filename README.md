@@ -15,4 +15,8 @@ github page 404에러를 해결하였다
 react로 배포할때 주로 뜨는 문제라하며 루트경로가 올바르게 build되지 않는 문제라한다.   
 http://ghcksdk.com/gh-pages-neterr_aborted-404/   
 해당 게시글을 참고하여 해결하였다.   
-페이지의 맽 밑에 다음페이지와 이전페이지로 이동하는 버튼을 만들고 현재페이지를 표기하였다.
+페이지의 맽 밑에 다음페이지와 이전페이지로 이동하는 버튼을 만들고 현재페이지를 표기하였다.   
+각 영화의 이미지를 클릭하면 상세사항을 보기위해 router를 설정하였으며 match를 활용하기 위해   
+https://wooooooak.github.io/frontend/2018/11/02/Typescript%EC%99%80-React%EC%97%90%EC%84%9C-match-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/   
+https://gongbu-ing.tistory.com/45   
+해당 게시글을 참고하였다.   
