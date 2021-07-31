@@ -13,9 +13,5 @@ with React, TypeScripts
 ----------
 github page 404에러를 해결하였다   
 react로 배포할때 주로 뜨는 문제라하며 루트경로가 올바르게 build되지 않는 문제라한다.   
-index.tsx에   
-ReactDOM.render(
-<!-- <Router basename={process.env.PUBLIC_URL}>
-  < App /></Router>,
-  document.getElementById('root')); -->   
-를 입력하여 해결하였다.
+http://ghcksdk.com/gh-pages-neterr_aborted-404/   
+해당 게시글을 참고하여 해결하였다.   
