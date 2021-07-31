@@ -10,6 +10,7 @@
 .MainDesc{
     max-width: 500px;
     min-width: 500px;
+    margin-left: 15px;
     position: absolute;
     margin-top: 270px;
     color: white;

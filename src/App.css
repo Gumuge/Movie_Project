@@ -17,3 +17,24 @@
 .MainMovie{
   width: 100%;
 }
+.control{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 95%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+Button{
+  width: 100px;
+  height: 40px;
+  margin-right: 50px;
+  margin-left: 50px;
+  text-align: center;
+  font-size: large;
+  text-shadow: 1px 1px 10px black;
+}
+.page{
+  font-size: large;
+  text-shadow: 1px 1px 1px black;
+}
