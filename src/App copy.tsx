@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import {ApiKey, ApiURL, ImageURL} from './Config';
-import MainImage from './MainImage';
+import {ApiKey, ApiURL, ImageURL} from './Components/Config';
+import MainImage from './Components/MainImage';
 import axios from 'axios';
-import Contents from "./Contents";
+import Contents from "./Components/Contents";
 
 interface Movie{
   adult: false
