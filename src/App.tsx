@@ -15,13 +15,11 @@ function App(): JSX.Element {
     <Router>
       <div>
         <Switch>
-          <Route exact={true} path="/movie/detail/:MovieId" component={About}>
-          </Route>
-          <Route path="/users">
-          </Route>
-          <Route path="/" exact={true}>
+        <Route path="/Movie_Project" exact={true}>
             <MainPage />
-          </Route>
+        </Route>
+        <Route exact={true} path="/movie/detail/:MovieId" component={About}>
+        </Route>
         </Switch>
       </div>
     </Router>
