@@ -1,7 +1,10 @@
 .grid_card{
     width: auto;
 }
-img{
+.actimage{
     width: 222px;
     height: 333px;
+}
+.poster{
+    width: 70%;
 }

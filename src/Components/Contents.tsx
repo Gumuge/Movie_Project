@@ -4,7 +4,7 @@ import About from "./About"
 import {
     Link
 } from "react-router-dom";
-import none from "../noneprofile.png";
+
 
 interface MyProps{
     poster?:string;
@@ -21,7 +21,7 @@ function Contents(props: MyProps):JSX.Element {
                 <Link to={{
                     pathname:`/movie/detail/${props.id}`
                     }}>
-                <img 
+                <img className="poster"
                 src={props.poster}
                 ></img>
                 </Link>
@@ -31,7 +31,7 @@ function Contents(props: MyProps):JSX.Element {
     else{
         return (
             <div className="grid_card" key={props.id}>
-                <img 
+                <img className="actimage"
                 src={props.actorImage}
                 ></img>
                 <p>Actor Name : {props.name}</p>
