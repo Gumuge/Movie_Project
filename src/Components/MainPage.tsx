@@ -91,6 +91,7 @@ function MainPage(): JSX.Element {
           poster={`${ImageURL}w500${movie.poster_path}`}
           id={movie.id}
           key={movie.id}
+          mode="movie"
           ></Contents>
         ))}
       </div>

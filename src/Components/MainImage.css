@@ -16,6 +16,11 @@
     color: white;
     text-shadow: 1px 1px 5px black;
 }
-.desc{
-    
+
+.desc p{
+    height: 150px; 
+    width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }

@@ -14,7 +14,7 @@ function MainImage(props:MyProps):JSX.Element {
             <div className="MainDesc">
                 <h2>{props.title}</h2>
                 <div className="desc">
-                    {props.desc}
+                    <p>{props.desc}</p>
                 </div>
             </div>
             
