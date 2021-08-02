@@ -20,3 +20,7 @@ http://ghcksdk.com/gh-pages-neterr_aborted-404/
 https://wooooooak.github.io/frontend/2018/11/02/Typescript%EC%99%80-React%EC%97%90%EC%84%9C-match-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/   
 https://gongbu-ing.tistory.com/45   
 해당 게시글을 참고하였다.   
+
+2021-08-02
+----------
+영화이미지를 클릭하면 새로운 창으로 이동하면서 해당 영호에 대한 정보가 나타나도록 하였다.

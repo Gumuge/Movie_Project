@@ -75,7 +75,7 @@ function MainPage(): JSX.Element {
 
       {MainMovie &&
         <MainImage 
-        image={`${ImageURL}w1280${MainMovie?.backdrop_path}`}
+        image={`${ImageURL}w1280${MainMovie.backdrop_path}`}
         title={MainMovie.original_title}
         desc={MainMovie.overview}
         ></MainImage>

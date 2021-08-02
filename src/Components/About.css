@@ -1,0 +1,27 @@
+table{
+    border: 1px solid;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid;
+    padding: 10px;
+    text-align: center; 
+}
+th{
+    background-color:#C0C0C0;
+}
+
+.Info{  
+    width: 100%;
+}
+.InfoTitle{
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px black;
+}
