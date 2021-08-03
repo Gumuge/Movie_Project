@@ -48,14 +48,18 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
     let endpoint = `${ApiURL}movie/${MovieId}?api_key=${ApiKey}&language=ko-Korean`;
     const [MovieDetails, setMovieDetails] = useState<Movie>();
     const [Actors, setActors] = useState<Actor[]>([]);
+    const [IsShow, setIsShow] = useState<boolean>(false);
     async function getData(endpoint:string, Creditendpoint:string){ 
       try {
       //응답 성공
+      //favorite의 정보를 받아옴
+      //영화 정보를 받아옴
       axios.get(endpoint)
       .then(response => {
         console.log(response);
         setMovieDetails(response.data);
       }) 
+      //crew의 정보를 받아옴
       axios.get(Creditendpoint)
       .then(response => {
         console.log(response.data);
@@ -71,6 +75,16 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
       getData(endpoint, Creditendpoint);
       
     }, [])
+    function ViewActive() {
+      setIsShow(!IsShow);
+    }
+    function add() {
+      axios.post("http://localhost:3001/favorite/", {
+          id:MovieDetails?.id,
+          title:MovieDetails?.title,
+          desc:MovieDetails?.overview
+      })
+    }
     console.log(MovieDetails);
     console.log(props);
     return (
@@ -83,7 +97,7 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           ></MainImage>
           }
           <div className="InfoTitle"> 
-            Movie Info
+            Movie Info <button className="fav" onClick={add}>Favorite</button>
           </div>
           <div>
             <table>
@@ -111,6 +125,11 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           <div className="InfoTitle"> 
             Actros Info
           </div>
+          
+          <div>
+            <button onClick={ViewActive}>View</button>
+          </div>
+          {IsShow &&
           <div className="contents">
           {Actors.map((actor) => (
           <Contents 
@@ -123,6 +142,7 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           ></Contents>
         ))}
           </div>
+        }
         </div>
     )
 }

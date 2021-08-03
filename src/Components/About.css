@@ -24,7 +24,12 @@ th{
     margin-top: 20px;
     margin-bottom: 20px;
     text-shadow: 1px 1px 1px black;
+    width: 100%;
 }
 .contents{
     margin-top: 50px;
-  }
+}
+.fav{
+    float: right;
+    margin-right: 120px;
+}

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import MainPage from "./Components/MainPage";
 import About from "./Components/About";
+import Favorite from "./Components/Favorite";
 
 //function App(props : Movie): JSX.Element 
 function App(): JSX.Element {
@@ -20,6 +21,7 @@ function App(): JSX.Element {
         </Route>
         <Route exact={true} path="/movie/detail/:MovieId" component={About}>
         </Route>
+        <Route exact={true} path="/favorite" component = {Favorite}></Route>
         </Switch>
       </div>
     </Router>
