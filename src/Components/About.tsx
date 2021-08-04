@@ -80,7 +80,7 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
       setIsShow(!IsShow);
     }
     function add() {
-      axios.post("https://gumuge-movie-project.herokuapp.com/api", {
+      axios.post("https://gumuge-movie-project.herokuapp.com/api/favorite", {
           id:MovieDetails?.id,
           title:MovieDetails?.title,
           desc:MovieDetails?.overview
