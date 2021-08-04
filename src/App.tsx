@@ -16,7 +16,7 @@ function App(): JSX.Element {
     <Router>
       <div>
         <Switch>
-        <Route path="/Movie_Project" exact={true}>
+        <Route path="/" exact={true}>
             <MainPage />
         </Route>
         <Route exact={true} path="/movie/detail/:MovieId" component={About}>
