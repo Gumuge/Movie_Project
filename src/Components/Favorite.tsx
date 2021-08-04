@@ -47,7 +47,7 @@ function Favorite():JSX.Element {
                 <button onClick={() => del(item.id)}>Delete</button>
                 </div>  
             )) : 
-            <div>Nothing</div>}
+            <div><p>Nothing</p></div>}
         </div>
     )
 }

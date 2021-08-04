@@ -84,6 +84,8 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           id:MovieDetails?.id,
           title:MovieDetails?.title,
           desc:MovieDetails?.overview
+      }).then( () => {
+        alert("Movie add to list!");
       })
     }
     console.log(MovieDetails);
