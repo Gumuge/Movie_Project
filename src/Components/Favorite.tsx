@@ -12,7 +12,7 @@ function Favorite():JSX.Element {
     const [fav, setfav] = useState<Data[]>([]);
 
     useEffect(() => {
-        axios.get("https://gumuge-movie-project.herokuapp.com/api/favorite")
+        axios.get("http://localhost:3001/favorite/")
         .then(response => {
             console.log(response.data); 
             setfav(response.data);
@@ -21,7 +21,7 @@ function Favorite():JSX.Element {
 
     function del(id:number) {
         if(window.confirm("DELETE?")){
-            axios.delete(`https://gumuge-movie-project.herokuapp.com/api/favorite/${id}`)
+            axios.delete(`http://localhost:3001/favorite/${id}`)
             .then(response => {
                 console.log(response);
             })
