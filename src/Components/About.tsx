@@ -6,6 +6,7 @@ import MainImage from './MainImage';
 import "./About.css";
 import Contents from "./Contents";
 import none from "../noneprofile.png";
+import Nav from "./Nav";
 
 interface Myprops{
   MovieId:string
@@ -88,6 +89,8 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
     console.log(MovieDetails);
     console.log(props);
     return (
+      <div>
+        <Nav></Nav>
         <div className="Info">
           {MovieDetails &&
           <MainImage 
@@ -144,6 +147,7 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           </div>
         }
         </div>
+      </div>
     )
 }
 

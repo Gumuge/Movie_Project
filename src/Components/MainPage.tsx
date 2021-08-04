@@ -4,6 +4,7 @@ import {ApiKey, ApiURL, ImageURL} from './Config';
 import MainImage from './MainImage';
 import axios from 'axios';
 import Contents from "./Contents";
+import Nav from "./Nav";
 
 interface Movie{
   adult: false
@@ -72,7 +73,7 @@ function MainPage(): JSX.Element {
   //console.log(MainMovie);
   return (
     <div className="MainPage">
-
+      <Nav></Nav>
       {MainMovie &&
         <MainImage 
         image={`${ImageURL}w1280${MainMovie.backdrop_path}`}

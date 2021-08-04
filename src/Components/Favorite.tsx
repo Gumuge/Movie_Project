@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import "./Favorite.css";
+import Nav from "./Nav";
 
 interface Data{
     id:number;
@@ -28,11 +29,21 @@ function Favorite():JSX.Element {
     }
     return (
         <div>
+            <Nav></Nav>
             {fav.map((item) => (
                 <div key={item.id}>
-                <h1>{item.id}</h1>
-                <h1>{item.title}</h1>
-                <h1>{item.desc}</h1>
+                    <table>
+                        <tr>
+                            <th>ID</th><td>{item.id}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th><td>{item.title}</td>
+                        </tr>
+                        <tr>
+                            <th>Desc</th><td>{item.desc}</td>
+                        </tr>
+                    </table>
+                    <br></br>
                 <button onClick={() => del(item.id)}>Delete</button>
                 </div>  
             ))}
