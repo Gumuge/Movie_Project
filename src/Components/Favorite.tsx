@@ -30,7 +30,7 @@ function Favorite():JSX.Element {
     return (
         <div>
             <Nav></Nav>
-            {fav.map((item) => (
+            {fav ? fav.map((item) => (
                 <div key={item.id}>
                     <table>
                         <tr>
@@ -46,7 +46,8 @@ function Favorite():JSX.Element {
                     <br></br>
                 <button onClick={() => del(item.id)}>Delete</button>
                 </div>  
-            ))}
+            )) : 
+            <div>Nothing</div>}
         </div>
     )
 }

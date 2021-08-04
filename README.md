@@ -50,3 +50,5 @@ json-server를 이용하여 CRUD를 구현하던 중 DELETE에서 404에러가 �
 Delete를 할 때 url을 http://localhost:3001/favorite?id={id} 가 아닌    
 http://localhost:3001/favorite/{id} 로 하니 해결되었다.   
 어떤 차이인지는 마저 공부해야하겠다.   
+https://heeyeonjeong.tistory.com/102   
+를 참고하여 Heroku에 프로젝트를 업로드 하였다.   
