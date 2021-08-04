@@ -9,7 +9,7 @@ function Nav() {
         <div className="nav">
             <img src={icon} className="icon"></img>
             <Link to={{
-            pathname:"/Movie_Project"
+            pathname:"/"
             }}>
             <button>Home</button>
             </Link>
