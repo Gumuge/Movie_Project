@@ -102,7 +102,7 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           ></MainImage>
           }
           <div className="InfoTitle"> 
-            Movie Info <button className="fav" onClick={add}>Favorite</button>
+            Movie Info <button className="fav" onClick={add}>Add Favorite</button>
           </div>
           <div>
             <table>
