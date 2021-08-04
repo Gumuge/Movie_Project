@@ -44,3 +44,9 @@ github page는 정적인 방식이라 구현이 불가능 하므로 heroku를 �
 https://velog.io/@ansfls/Heroku%EB%A1%9C-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%EC%9B%B9-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0   
 json-server를 이용하여 CRUD를 구현하던 중 DELETE에서 404에러가 발생하였다.   
 아직 해결 방법은 모르겠다.   
+
+2021-08-04
+----------
+Delete를 할 때 url을 http://localhost:3001/favorite?id={id} 가 아닌    
+http://localhost:3001/favorite/{id} 로 하니 해결되었다.   
+어떤 차이인지는 마저 공부해야하겠다.   

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
+import "./Favorite.css";
 
 interface Data{
     id:number;
@@ -19,7 +20,10 @@ function Favorite():JSX.Element {
 
     function del(id:number) {
         if(window.confirm("DELETE?")){
-            axios.delete(`http://localhost:3001/favorite?id=${id}`)
+            axios.delete(`http://localhost:3001/favorite/${id}`)
+            .then(response => {
+                console.log(response);
+            })
         }
     }
     return (
