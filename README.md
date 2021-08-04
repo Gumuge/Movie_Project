@@ -1,6 +1,7 @@
 Movie_Project
 with React, TypeScripts
 ============
+https://gumuge-movie-project.herokuapp.com/   
 
 작업일지
 -------
