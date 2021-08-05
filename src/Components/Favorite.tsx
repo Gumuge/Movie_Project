@@ -2,28 +2,35 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import "./Favorite.css";
 import Nav from "./Nav";
+import {MyApi, HerokuApi, ImageURL} from "./Config";
+import { getJSDocDeprecatedTag } from 'typescript';
 
 interface Data{
     id:number;
     title:string;
     desc:string;
+    poster:string;
 }
 function Favorite():JSX.Element {
     const [fav, setfav] = useState<Data[]>([]);
 
-    useEffect(() => {
-        axios.get("https://gumuge-movie-project.herokuapp.com/favorite/")
+    async function getData(){
+        await axios.get(`${HerokuApi}/favorite/`)
         .then(response => {
             console.log(response.data); 
             setfav(response.data);
         })
+    }
+    useEffect(() => {
+        getData();
     }, [])
 
     function del(id:number) {
         if(window.confirm("DELETE?")){
-            axios.delete(`https://gumuge-movie-project.herokuapp.com/favorite/${id}`)
+            axios.delete(`${HerokuApi}/favorite/${id}`)
             .then(response => {
                 console.log(response);
+                getData();
             })
         }
     }
@@ -31,8 +38,11 @@ function Favorite():JSX.Element {
         <div>
             <Nav></Nav>
             {fav ? fav.map((item) => (
-                <div key={item.id}>
+                <div key={item.id} className="fav">
                     <table>
+                        <tr>
+                            <td rowSpan={4}><img src={`${ImageURL}w500${item.poster}`}></img></td>
+                        </tr>
                         <tr>
                             <th>ID</th><td>{item.id}</td>
                         </tr>
@@ -42,9 +52,10 @@ function Favorite():JSX.Element {
                         <tr>
                             <th>Desc</th><td>{item.desc}</td>
                         </tr>
+                        <tr>
+                        <td><button onClick={() => del(item.id)}>Delete</button></td>
+                        </tr>
                     </table>
-                    <br></br>
-                <button onClick={() => del(item.id)}>Delete</button>
                 </div>  
             )) : 
             <div><p>Nothing</p></div>}

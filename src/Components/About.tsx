@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {ApiKey, ApiURL, ImageURL} from './Config';
+import {ApiKey, ApiURL, ImageURL, MyApi, HerokuApi} from './Config';
 import axios from 'axios';
 import { RouteComponentProps } from 'react-router-dom';
 import MainImage from './MainImage';
@@ -11,10 +11,14 @@ import Nav from "./Nav";
 interface Myprops{
   MovieId:string
 }
+interface Geners{
+  id:number;
+  name:string;
+}
 interface Movie{
   adult: false
   backdrop_path: string;
-  genres: Array<Object>;
+  genres: Array<Geners>;
   id: number;
   original_language: string;
   original_title: string;
@@ -80,13 +84,16 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
       setIsShow(!IsShow);
     }
     function add() {
-      axios.post("https://gumuge-movie-project.herokuapp.com/favorite/", {
+      axios.post(`${HerokuApi}/favorite/`, {
           id:MovieDetails?.id,
           title:MovieDetails?.title,
-          desc:MovieDetails?.overview
+          desc:MovieDetails?.overview,
+          poster:MovieDetails?.poster_path
       }).then( () => {
         alert("Movie add to list!");
-      })
+      }).catch (function (error){
+          alert("Can't add to list \nPlease check your list");
+      });    
     }
     console.log(MovieDetails);
     console.log(props);
@@ -102,7 +109,7 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           ></MainImage>
           }
           <div className="InfoTitle"> 
-            Movie Info <button className="fav" onClick={add}>Add Favorite</button>
+            Movie Info <button className="favbtn" onClick={add}>Add Favorite</button>
           </div>
           <div>
             <table>
@@ -117,7 +124,10 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
               </tr>
               <tr>
                 <th>Release Date</th><td>{MovieDetails?.release_date}</td>
-                <th>Status</th><td colSpan={3}>{MovieDetails?.status}</td>
+                <th>Status</th><td>{MovieDetails?.status}</td>
+                <th>Genres</th><td>{MovieDetails?.genres.map((item) => (
+                  item.name + "  /  "
+                ))}</td>
               </tr>
 
               <tr>

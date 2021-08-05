@@ -1,6 +1,8 @@
 Movie_Project
 with React, TypeScripts
 ============
+접속 링크   
+
 https://gumuge-movie-project.herokuapp.com/   
 
 작업일지
@@ -53,3 +55,10 @@ http://localhost:3001/favorite/{id} 로 하니 해결되었다.
 어떤 차이인지는 마저 공부해야하겠다.   
 https://heeyeonjeong.tistory.com/102   
 를 참고하여 Heroku에 프로젝트를 업로드 하였다.   
+
+2021-08-05
+----------
+Favorite 페이지를 좀 더 보기 쉽게 하였으며 Remove 버튼 클릭시 데이터를 다시 로드하여   
+즉각적으로 페이지에 반응하도록 설정하였다.   
+또한 영화 상세정보에 장르를 나타내는 부분도 추가하였다.   
+이로써 처음 구상했던 부분은 전부 구현했으며 앞으로 더 추가적인 아이디어가 생기면 추가하도록 하겠다.

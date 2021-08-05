@@ -29,7 +29,8 @@ th{
 .contents{
     margin-top: 50px;
 }
-.fav{
+.favbtn{
     float: right;
     margin-right: 120px;
+    height: auto;
 }
