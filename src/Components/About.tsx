@@ -95,8 +95,8 @@ function About(props:RouteComponentProps<Myprops>):JSX.Element {
           alert("Can't add to list \nPlease check your list");
       });    
     }
-    //console.log(MovieDetails);
-    //console.log(props);
+    console.log(MovieDetails);
+    console.log(props);
     return (
       <div>
         <Nav></Nav>
